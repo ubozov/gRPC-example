@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"os"
+
+	"github.com/ubozov/grpc-example/cli"
+)
 
 func main() {
-	fmt.Println("Hi")
+	log.Println("start program")
+	defer log.Println("end program")
+
+	cli.Execute(os.Args[1:])
 }
