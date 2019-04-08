@@ -1,11 +1,14 @@
 package cli
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"strings"
+	"time"
 )
 
+// Execute executes commands.
 // db-create - command to create database
 func Execute(args []string) {
 	if len(args) == 0 {
@@ -25,4 +28,11 @@ func Execute(args []string) {
 	}
 
 	log.Println("command was successfully executed")
+}
+
+// Shutdown graceful shutdowns program.
+func Shutdown(ctx context.Context) {
+	log.Println("The program is shutting down...")
+	time.Sleep(time.Second)
+	log.Println("Done")
 }
