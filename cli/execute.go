@@ -19,6 +19,9 @@ func Execute(args []string) {
 	case "db-create":
 		log.Println("create database")
 		databaseCreateFlow(args)
+	case "start-server":
+		log.Println("start grpc server")
+		grpcServerStartFlow(args)
 	case "help":
 		fmt.Println(helpMessage)
 		return

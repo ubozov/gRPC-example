@@ -7,6 +7,7 @@ import (
 	"strings"
 
 	"github.com/ubozov/grpc-example/data"
+	"github.com/ubozov/grpc-example/grpc"
 	"github.com/ubozov/grpc-example/statik"
 )
 
@@ -66,4 +67,10 @@ func createDatabase(connStr string) error {
 	}
 
 	return nil
+}
+
+func grpcServerStartFlow(args []string) {
+	if err := server.Start(); err != nil {
+		panic("failed to run grpc server: " + err.Error())
+	}
 }
