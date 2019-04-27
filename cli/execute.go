@@ -22,6 +22,9 @@ func Execute(args []string) {
 	case "start-server":
 		log.Println("start grpc server")
 		grpcServerStartFlow(args)
+	case "start-client":
+		log.Println("start grpc client")
+		grpcClientStartFlow(args)
 	case "help":
 		fmt.Println(helpMessage)
 		return
